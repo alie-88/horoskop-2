@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+ <head>
+	<style>
+		* {
+			box-sizing: border-box;
+		}
+		div {
+			width: 30%;
+			margin: auto;
+			background-color: #e9967a;
+			border: 1px solid rgb(200, 200, 200);
+			height: 400px;
+		}
+		button {
+			display: block;
+			margin: 20px auto;
+			padding: 5px 8px;
+		}
+		h3 {
+			text-align: center;
+		}
+		p {
+			text-align: center;
+			font-size: 30px;
+			font-family: Arial;
+			padding: 80px;
+		}
+	</style>
+ </head>
+ <body>
+ 
+		<div>
+			<button onclick="myHoroskop()">Click here</button>
+			<h3>Keberuntungan Anda hari ini</h3>
+			<hr>
+			<p id="str"></p>
+		</div>
+		
+		<script>
+			function myHoroskop() {
+				
+				const randomNumber = Date.now();
+				
+				const resultNumber = Math.round(randomNumber % 10 + 1);
+								
+				switch (resultNumber) {
+					
+					case 1:
+						document.getElementById("str").innerHTML = "Luar biasa!";
+						document.getElementById("str").style.color = "white";
+						break;
+						
+					case 2:
+					case 3:
+						document.getElementById("str").innerHTML = "Hebat!";
+						document.getElementById("str").style.color = "blue";
+						break;
+						
+					case 4:
+					case 5:
+					case 6:
+					case 7:
+						document.getElementById("str").innerHTML = "Boleh juga!";
+						document.getElementById("str").style.color = "green";
+						break;
+						
+					case 8:
+					case 9:
+						document.getElementById("str").innerHTML = "Hati - hati!";
+						document.getElementById("str").style.color = "red";
+						break;
+						
+					case 10:
+						document.getElementById("str").innerHTML = "Mengerikan!";
+						document.getElementById("str").style.color = "darkred";
+						break;
+				}
+				
+			}
+		</script>
+ 
+ </body>
+ </html>
